@@ -3,5 +3,5 @@ class Category < ApplicationRecord
     has_many :expenditure_categories, dependent: :destroy
     has_many :expenditures, through: :expenditure_categories
     validates :name, presence: true, length: { minimum: 1, maximum: 25 }
-    validatable :icon, presence: true
+    validates :icon, presence: true
 end
