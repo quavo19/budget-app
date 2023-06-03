@@ -1,14 +1,16 @@
+<%= render partial: 'shared/nav', locals: {title:'CATEGORIES', symbol:'←', url: :back}%>
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+<% @categories.each do |category| %>
+  <%= link_to category_path(category) do %>
+    <div class="categories-index" id="categories">
+      <%= render category %>
+      
+    </div>
   <% end %>
-</div>
+<% end %>
 
-<%= link_to "New category", new_category_path %>
+
+<div class="container-make-category">
+<%= link_to "Create New category", new_category_path, class: "make-category" %>
+</div>
