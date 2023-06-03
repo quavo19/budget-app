@@ -4,11 +4,19 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = current_user.categories
   end
 
   # GET /categories/1 or /categories/1.json
   def show
+    @category = Category.find(params[:id])
+    if @category.author != current_user
+      flash[:alert] = 'Not authorized!'
+      redirect_to categories_path
+    end
+    @expenditure = @category.expenditure.order(created_at: :desc)
+    puts @expenditures
+    @total = @expenditure.sum(:amount)
   end
 
   # GET /categories/new
@@ -23,7 +31,7 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
-
+    @category.author = current_user
     respond_to do |format|
       if @category.save
         format.html { redirect_to category_url(@category), notice: "Category was successfully created." }
