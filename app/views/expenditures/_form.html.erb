@@ -1,29 +1,29 @@
 
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-<div class='cat-page'>       
+<div class='Login-form cat-page'>       
 <%= form_with model: @expenditure, url: category_expenditures_path(@category) do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="mb-3 field">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
+  <div class="mb-3 field">
+    <%= form.label :amount, class: 'form-label' %>
+    <%= form.number_field :amount, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :category_ids, "Categories" %>
+  <div class=" mb-3 field">
+    <%= form.label :category_ids, "choose Categories" %>
     <% Category.all.each do |category| %>
-      <div>
+      <div class="">
         <%= check_box_tag 'expenditure[category_ids][]', category.id, @expenditure.category_ids.include?(category.id) %>
         <%= label_tag "expenditure_category_ids_#{category.id}", category.name %>
       </div>
     <% end %>
   </div>
 
-  <div>
+  <div class="actions-submit">
     <%= form.submit "Create Trade Record" %>
   </div>
 <% end %>

@@ -1,22 +1,17 @@
+<%= render partial: 'shared/nav', locals: {title:'TRANSACTION', symbol:'←', url: :back}%>
 <p style="color: green"><%= notice %></p>
-
-<h1>Expenditures</h1>
-
-<div id="expenditures">
-  <% @expenditures.each do |expenditure| %>
-    <%= render expenditure %>
-    <p>
-      <%
-=begin%>
- <%= link_to "Show this expenditure", category_expenditures %> 
-<%
-=end%>
-    </p>
+<ul class="expense-ul">
+  <% @expenditures.each do |expense| %>
+    <li class="expenditure-items">
+      <strong>Name:</strong> <%= expense.name %>
+      <br>
+      <strong>Amount:</strong> <%= expense.amount %>
+    </li>
   <% end %>
-</div>
+</ul>
 
-<%
-=begin%>
- <%= link_to "New expenditure", new_expenditure_path %> 
-<%
-=end%>
+
+
+<div class="container-make-category">
+<%= link_to 'Create Expense', new_category_expenditure_path(@category), class: "make-category"  %>
+</div>
