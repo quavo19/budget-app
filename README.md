@@ -44,9 +44,6 @@
 - Here is a [Live Demo Link](https://budget-application-5ef7.onrender.com/splash)
 - Here is a [presentation video link](https://www.loom.com/share/eabe14e08e1d4f2b99f2f9c39988d6df)
 
-## Project Screenshots
-
-![Home page](./app/assets/images/screenshot.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,7 +69,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/donmark2k/budget_app.git
+  git clone https://github.com/quavo19/budget-app.git
 ```
 
 ### Install
@@ -130,7 +127,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/donmark2k/budget_app/issues).
+Feel free to check the [issues page](https://github.com/quavo19/budget-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,7 +135,7 @@ Feel free to check the [issues page](https://github.com/donmark2k/budget_app/iss
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please leave a STAR to the [Github repo](https://github.com/donmark2k/
+If you like this project please leave a STAR to the [Github repo](https://github.com/quavo19/
 budget_app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
