@@ -6,9 +6,17 @@
   <% @expenditures.each do |expenditure| %>
     <%= render expenditure %>
     <p>
-      <%= link_to "Show this expenditure", expenditure %>
+      <%
+=begin%>
+ <%= link_to "Show this expenditure", category_expenditures %> 
+<%
+=end%>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New expenditure", new_expenditure_path %>
+<%
+=begin%>
+ <%= link_to "New expenditure", new_expenditure_path %> 
+<%
+=end%>
