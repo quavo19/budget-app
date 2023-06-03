@@ -29,10 +29,11 @@ class ExpendituresController < ApplicationController
       @expenditure.author_id = @user.id
       @expenditure.category_id = category_id
 
-      unless @expenditure.valid? && @expenditure.save
-        puts @expenditure.errors.full_messages
-        render :new and return
-      end
+      next if @expenditure.valid? && @expenditure.save
+
+      puts @expenditure.errors.full_messages
+      render :new
+      break
     end
 
     redirect_to category_expenditures_path(@category), notice: 'Trade Records created successfully.'

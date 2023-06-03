@@ -11,7 +11,6 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
-    
     @category = Category.find(params[:id])
     if @category.author != current_user
       flash[:alert] = 'Not authorized!'
