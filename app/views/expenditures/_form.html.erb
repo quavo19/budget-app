@@ -15,7 +15,8 @@
 
   <div class=" mb-3 field">
     <%= form.label :category_ids, "choose Categories" %>
-    <% Category.all.each do |category| %>
+    <% current_user.categories.each do |category| %>
+    
       <div class="">
         <%= check_box_tag 'expenditure[category_ids][]', category.id, @expenditure.category_ids.include?(category.id) %>
         <%= label_tag "expenditure_category_ids_#{category.id}", category.name %>

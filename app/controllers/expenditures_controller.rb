@@ -6,7 +6,7 @@ class ExpendituresController < ApplicationController
   # GET /expenditures or /expenditures.json
   def index
     @category = Category.find(params[:category_id])
-    @expenditures = @category.expenditure
+    @expenditures = @category.expenditures
   end
 
   # GET /expenditures/1 or /expenditures/1.json
@@ -29,11 +29,10 @@ class ExpendituresController < ApplicationController
       @expenditure.author_id = @user.id
       @expenditure.category_id = category_id
 
-      next if @expenditure.valid? && @expenditure.save
-
-      puts @expenditure.errors.full_messages
-      render :new
-      break
+      unless @expenditure.valid? && @expenditure.save
+        puts @expenditure.errors.full_messages
+        render :new and return
+      end
     end
 
     redirect_to category_expenditures_path(@category), notice: 'Trade Records created successfully.'

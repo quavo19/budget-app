@@ -1,7 +1,7 @@
 <%= render partial: 'shared/nav', locals: {title:'TRANSACTION', symbol:'←', url: :back}%>
 <p style="color: green"><%= notice %></p>
 <ul class="expense-ul">
-  <% @expenditure.each do |expense| %>
+  <% @category.expenditures.each do |expense| %>
     <li class="expenditure-items">
       <strong>Name:</strong> <%= expense.name %>
       <br>

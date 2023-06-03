@@ -11,12 +11,13 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    
     @category = Category.find(params[:id])
     if @category.author != current_user
       flash[:alert] = 'Not authorized!'
       redirect_to categories_path
     end
-    @expenditure = @category.expenditure.order(created_at: :desc)
+    @expenditure = @category.expenditures.order(created_at: :desc)
     puts @expenditures
     @total = @expenditure.sum(:amount)
   end
