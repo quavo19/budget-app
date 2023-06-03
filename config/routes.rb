@@ -2,8 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :categories
-  resources :expenditures
+  resources :categories do
+    resources :expenditures, only: [:index, :create, :new]
+  end
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
