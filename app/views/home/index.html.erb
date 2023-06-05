@@ -1,15 +1,21 @@
 <div class="home-container">
-  <div class="flex ">
+  <div class="flex-home">
     <% if user_signed_in? %>
-      <p class="text-lg">Welcome <%= current_user.name %> 👋🏽</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/520/520464.png" alt="Welcome image" class="w-1/2 md:w-64 mx-auto my-10">
-      <%= link_to "Add new category", new_category_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 my-5 w-full" %>
-      <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full" %>
+      <p class="welcome">Welcome <%= current_user.name %> 👋🏽</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/520/520464.png" alt="Welcome image" class="logo-image">
+      <div class="login-buttons">
+      <%= link_to "Go To categories", categories_path, class: "btn btn-primary" %>
+      <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary logout" %>
+      </div>
     <% else %>
-      <p class="text-lg">Welcome to Budget App</p>
-      <img src="https://cdn-icons-png.flaticon.com/512/295/295128.png" alt="Welcome image" class="w-1/2 md:w-64 mx-auto my-20">
-      <%= link_to "Log in", new_user_session_path, class: "bg-blue-500 text-white px-4 py-2 mr-2 rounded hover:bg-blue-600 mb-5" %>
-      <%= link_to "Sign up", new_user_registration_path, class: "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" %>
+      <div class="welcome-logo">
+      <h2 class="welcome">Welcome To Budget App</h2>
+      <img src="https://cdn-icons-png.flaticon.com/512/295/295128.png" alt="Welcome image" class="logo-image">
+      </div>
+      <div class="login-buttons">
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn " %>
+      </div>
     <% end %>
   </div>
 </div>
