@@ -28,6 +28,14 @@ main {
   background: rgb(238, 236, 236);
 }
 
+.flex {
+  display: flex;
+}
+
+.name-time p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -116,15 +124,15 @@ ul {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 5px;
   background: #fff;
-  padding: 20px;
+  padding: 12px;
 }
 
 .category-container img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 5%;
   background-size: contain;
 }
 
@@ -190,6 +198,26 @@ ul {
 .form-control:focus {
   box-shadow: none;
   outline: none;
+}
+
+.name-time {
+  flex-direction: column;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+.name-time p {
+  color: #b9b7b7
+}
+
+.name-time p:nth-child(2) {
+  font-size: 12px;
+}
+
+.amount {
+  color: #000;
+  font-weight: 600;
+  font-size: 17px;
 }
 
 @media screen and (max-width: 780px) {
