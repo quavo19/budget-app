@@ -1,0 +1,18 @@
+databases:
+  - name: Donald Akite
+    databaseName: donald_akite
+    user: donald_akite_user
+
+services:
+  - type: web
+    name: Budget
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: donald_akite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

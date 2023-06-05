@@ -1,0 +1,39 @@
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render partial: 'shared/nav', locals: {title:'SIGNUP', symbol:'←', url: :back}%>
+  <div class= 'Login-form'>
+  <div class="mb-3 field">
+    <%= f.label :name, class: 'form-field' %><br />
+<%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "name", placeholder: 'name' %>  </div>
+
+
+  <div class="field">
+    <%= f.label :email, class: 'form-field' %><br />
+    <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'form-field' %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, class: 'form-control', autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: 'form-field' %><br />
+    <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password" %>
+  </div>
+  <div class="actions-submit">
+    <%= f.submit "SignUp" %>
+  </div>
+  </div>
+<div>
+  
+<% end %>
+
+<div class="shared-links">
+<%= render "devise/shared/links" %>
+</div>
