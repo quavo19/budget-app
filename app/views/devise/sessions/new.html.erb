@@ -1,32 +1,30 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<%= render partial: 'shared/nav', locals: {title:'SIGNIN', symbol:'←', url: :back}%>
+<section >
+  <nav class='navbar navbar-light'>
+  <P>
+    <span class='arrow-link'>
+      <%= link_to '<', :back, class: 'nav-link' %>
+    </span> </P>
+    <h2 class='navbar-brand'>
+      LOGIN
+    </h2>
+      <div class="actions-submit">
+    <%= f.submit "LOGIN" %>
+  </div>
+  </nav>
+</section>
   
   <div class= 'Login-form'>
-  <div class="mb-3 field">
-    <%= f.label :email, class: 'form-label' %><br />
-    <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+  <div class="field">
+    <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email", placeholder: 'Email' %>
   </div>
 
   <div class="field">
-    <%= f.label :password, class: 'form-label' %><br />
-    <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-  <div class="actions-submit">
-    <%= f.submit "LogIn" %>
+    <%= f.password_field :password, class: 'form-control', autocomplete: "current-password", placeholder: 'Password' %>
   </div>
   </div>
 
 <% end %>
 
-<div class="shared-links">
-<%= render "devise/shared/links" %>
-</div>
 
