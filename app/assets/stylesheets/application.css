@@ -32,10 +32,6 @@ main {
   display: flex;
 }
 
-.name-time p {
-  margin: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -207,7 +203,8 @@ ul {
 }
 
 .name-time p {
-  color: #b9b7b7
+  margin: 0;
+  color: #b9b7b7;
 }
 
 .name-time p:nth-child(2) {
