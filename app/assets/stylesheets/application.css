@@ -1,0 +1,224 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  justify-content: space-between;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: rgb(238, 236, 236);
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.expense-ul li {
+  margin: 10px 0;
+}
+
+.navbar {
+  background-color: #3778c2;
+}
+
+.shared-links {
+  margin: 15% 7%;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.actions-next button,
+.actions-next a {
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  background: none;
+  border: none;
+}
+
+.actions-submit input {
+  width: 100%;
+  background: #3778c2;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-link {
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.container-make-category {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: #5fb523;
+}
+
+.make-category {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1.3px solid #fff;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #5fb523;
+}
+
+.categories-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.category-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background: #fff;
+  padding: 12px;
+}
+
+.category-container img {
+  width: 70px;
+  height: 70px;
+  border-radius: 5%;
+  background-size: contain;
+}
+
+.expenditure-items {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.home-container {
+  height: 100vh;
+}
+
+.list-categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 95%;
+  flex-direction: column;
+}
+
+.welcome-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcome {
+  color: #000;
+  font-weight: 800;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: space-around;
+  height: 15%;
+}
+
+.login-buttons .btn {
+  width: 100%;
+  font-weight: 600;
+}
+
+.login-buttons a {
+  padding: 15px;
+  font-weight: 600;
+}
+
+.logo-image {
+  width: 50%;
+  max-width: 800px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.name-time {
+  flex-direction: column;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+.name-time p {
+  margin: 0;
+  color: #b9b7b7;
+}
+
+.name-time p:nth-child(2) {
+  font-size: 12px;
+}
+
+.amount {
+  color: #000;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 780px) {
+  .categories-index {
+    margin: 20px;
+  }
+}

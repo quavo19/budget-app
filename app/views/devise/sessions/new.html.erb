@@ -1,0 +1,30 @@
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<section >
+  <nav class='navbar navbar-light'>
+  <P>
+    <span class='arrow-link'>
+      <%= link_to '<', :back, class: 'nav-link' %>
+    </span> </P>
+    <h2 class='navbar-brand'>
+      LOGIN
+    </h2>
+      <div class="actions-submit">
+    <%= f.submit "LOGIN" %>
+  </div>
+  </nav>
+</section>
+  
+  <div class= 'Login-form'>
+  <div class="field">
+    <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email", placeholder: 'Email' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, class: 'form-control', autocomplete: "current-password", placeholder: 'Password' %>
+  </div>
+  </div>
+
+<% end %>
+
+

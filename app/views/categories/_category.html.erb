@@ -1,0 +1,15 @@
+<div class="category-container" id="<%= dom_id category %>">
+
+  <div class='flex'>
+  <img src='<%= category.icon%>'/>
+  
+    <div class="flex name-time">
+      <p><%= category.name %></p>
+      <p><%= category.created_at.strftime("%B %d, %Y") %></P>
+    </div>
+  </div>
+
+  <div class="amount">
+    $<%= category.expenditures.sum(:amount) %>
+  </div>
+</div>

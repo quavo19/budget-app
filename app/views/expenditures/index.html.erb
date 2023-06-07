@@ -1,0 +1,17 @@
+<%= render partial: 'shared/nav', locals: {title:'TRANSACTION', symbol:'←', url: :back}%>
+<p style="color: green"><%= notice %></p>
+<ul class="expense-ul">
+  <% @expenditures.each do |expense| %>
+    <li class="expenditure-items">
+      <strong>Name:</strong> <%= expense.name %>
+      <br>
+      <strong>Amount:</strong> <%= expense.amount %>
+    </li>
+  <% end %>
+</ul>
+
+
+
+<div class="container-make-category">
+<%= link_to 'Create Expense', new_category_expenditure_path(@category), class: "make-category"  %>
+</div>

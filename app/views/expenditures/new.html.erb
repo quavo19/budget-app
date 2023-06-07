@@ -1,0 +1,9 @@
+<%= render partial: 'shared/nav', locals: {title:'NEW EXPENDITURE', symbol:'←', url: :back}%>
+
+<%= render "form", expenditure: @expenditure %>
+
+<br>
+
+<div>
+  <%= link_to "Back to expenditures", categories_path %>
+</div>
